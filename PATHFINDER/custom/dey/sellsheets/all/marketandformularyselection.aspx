@@ -54,7 +54,7 @@
         </div>
         <div class="spacedMarketRows">
             <asp:CheckBox ID="chkPA" runat="server" Text="PA" OnClick="updateTextbox(this, txtRestrictionsID);" CssClass="listItemWidth"/>
-            <asp:CheckBox ID="chkQL" runat="server" Text="QL" OnClick="updateTextbox(this, txtRestrictionsID);" CssClass="listItemWidth"/>
+            <asp:CheckBox ID="chkQL" runat="server" Text="QL" Checked="false" Visible="false"/>
             <asp:CheckBox ID="chkST" runat="server" Text="ST" OnClick="updateTextbox(this, txtRestrictionsID);" CssClass="listItemWidth"/><br />
         </div>
         <div class="spacedMarketRows">

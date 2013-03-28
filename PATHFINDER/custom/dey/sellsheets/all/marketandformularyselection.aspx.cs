@@ -55,8 +55,6 @@ public partial class custom_dey_sellsheets_marketandformularyselection : InputFo
             //Requirements state to automatically check off Restrictions
             chkPA.Checked = true;
             //chkPA.Enabled = false;
-            chkQL.Checked = true;
-            //chkQL.Enabled = false;
             chkST.Checked = true;
             //chkST.Enabled = false;
 
@@ -96,7 +94,6 @@ public partial class custom_dey_sellsheets_marketandformularyselection : InputFo
                     rblStatusType.SelectedValue = Convert.ToString(ss.Type_ID);
 
                 chkPA.Checked = (ss.Use_PA == null ? true : (Boolean)ss.Use_PA);
-                chkQL.Checked = (ss.Use_QL == null ? true : (Boolean)ss.Use_QL);
                 chkST.Checked = (ss.Use_ST == null ? true : (Boolean)ss.Use_ST);
 
                 if (ss.Use_Copay != null)
@@ -114,8 +111,6 @@ public partial class custom_dey_sellsheets_marketandformularyselection : InputFo
                 
                 if (chkPA.Checked)
                     txtRestrictions.Value = txtRestrictions.Value + chkPA.ClientID;
-                if (chkQL.Checked)
-                    txtRestrictions.Value = txtRestrictions.Value + chkQL.ClientID;
                 if (chkST.Checked)
                     txtRestrictions.Value = txtRestrictions.Value + chkST.ClientID;
             }
@@ -168,7 +163,7 @@ public partial class custom_dey_sellsheets_marketandformularyselection : InputFo
                 ssheet.Segment_MM = chkSegmentMM.Checked;
                 ssheet.Type_ID = Convert.ToInt32(rblStatusType.SelectedValue);
                 ssheet.Use_PA = chkPA.Checked;
-                ssheet.Use_QL = chkQL.Checked;
+                ssheet.Use_QL = false;
                 ssheet.Use_ST = chkST.Checked;
                 ssheet.Use_Copay = Convert.ToBoolean(rblCopay.SelectedValue);
                 ssheet.Modified_BY = Pinsonault.Web.Session.FullName;
