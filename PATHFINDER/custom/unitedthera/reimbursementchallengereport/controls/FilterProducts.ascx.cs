@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using PathfinderClientModel;
+using Pinsonault.Web;
+using Pinsonault.Application.UnitedThera;
+
+
+public partial class custom_controls_FilterProducts : System.Web.UI.UserControl
+{
+    public custom_controls_FilterProducts()
+    {
+        ContainerID = "moduleOptionsContainer";
+        MaxDrugs = 3;
+    }
+    public string ContainerID { get; set; }
+    public int MaxDrugs { get; set; }
+    protected override void OnPreRender(EventArgs e)
+    {
+        //creates the drop down list for Products Discussed based on the Drug_Name
+        using (PathfinderUnitedTheraEntities context = new PathfinderUnitedTheraEntities())
+        {
+              var q = (from p in context.LkpRCReportProductsDiscussedSet
+                    orderby p.Drug_Name
+                    select p ).ToList().Select( p => new GenericListItem { ID = p.Products_Discussed_ID.ToString(), Name = p.Drug_Name });
+              if (q != null)
+              {
+                  //List<GenericListItem> list = q.ToList();
+                  //list.Insert(0, new GenericListItem { ID = "0", Name = "All" });
+                  Pinsonault.Web.Support.RegisterGenericListVariable(this.Page, q.ToArray(), "productsDiscussed");
+              }
+        }
+        base.OnPreRender(e);
+    }
+    protected override void OnLoad(EventArgs e)
+    {
+        Pinsonault.Web.Support.RegisterTierScriptVariable(this.Page);
+        Pinsonault.Web.Support.RegisterComponentWithClientManager(this.Page, Products_Discussed_ID.ClientID, null, "moduleOptionsContainer");
+        Products_Discussed_ID.OnClientLoad = "function(s,a){$createCheckboxDropdown(s.get_id(), 'ProductsDiscussedIDOptionList', issueType , {'defaultText': '--All Products--', 'multiItemText': '" + Resources.Resource.Label_Multiple_Selection + "' }, null, 'moduleOptionsContainer'); var Products_Discussed_ID = $get('ProductsDiscussedIDOptionList').control; $loadPinsoListItems(Products_Discussed_ID, productsDiscussed, null, -1);}";
+        base.OnLoad(e);
+    }
+}

@@ -1,0 +1,184 @@
+.reimbursementchallengereport #divTile8 TBODY TD,
+.reimbursementchallengereport #divTile7 TBODY TD,
+.reimbursementchallengereport #divTile6 TBODY TD,
+.reimbursementchallengereport #divTile4 TBODY TD
+{
+    cursor: pointer;
+}
+
+
+.reimbursementchallengereport .ccrPlanSelectView
+{
+	float:left;
+	width:100%;
+	margin: 1px;
+	height:100%;
+}
+
+.reimbursementchallengereport .ccrBusinessPlans
+{
+	float:right;
+	width:39.15%;
+	margin: 1px 1px 1px 0px;
+	height:190px;
+	display:none;
+}
+
+.reimbursementchallengereport .ccrMeetings
+{
+	margin: 0px 1px 1px 1px;
+	display:none;
+}
+
+.reimbursementchallengereport .todaysAccounts2 DIV.tileContainerHeader .title
+{
+	width:auto !important;
+}
+
+.reimbursementchallengereport #tile4
+{
+    width: 25%;
+}
+
+.reimbursementchallengereport #tile5
+{
+    width: 75%;
+}
+
+.reimbursementchallengereport #divTile3Container .enlarge
+{
+    display: none!important;
+}
+
+.reimbursementchallengereport .ccrPlanSelectView
+{
+	border:solid 1px #2e59a8
+}
+
+.reimbursementchallengereport .ccrBusinessPlans
+{
+	border:solid 1px #2e59a8
+}
+
+.reimbursementchallengereport .chartThumb IMG
+{
+	width: 40px!important;
+}
+
+.reimbursementchallengereport .chartThumb
+{
+	width: 40px!important;
+	height: 42px!important;
+	bottom: 5px!important;
+}
+.reimbursementchallengereport .chartContainer
+{
+	cursor: pointer;
+}
+
+.reimbursementchallengereport .compareContainer
+{
+	float: left; 
+	padding-top: 2px;
+}
+
+.reimbursementchallengereport .comparePipe
+{
+    margin-left: 7px;
+    margin-right: 3px;
+}
+
+.reimbursementchallengereport .tools a, .reimbursementchallengereport #divTile3Container .tools a
+{
+	color:#fff !important;
+}
+
+.reimbursementchallengereport #filtersContainer .datePicker
+{
+	border:#2d58a8 1px solid;
+	color: #1a4b9e;
+	padding:2px 3px 0px 3px;
+	height: 18px;
+}
+
+.reimbursementchallengereport #searchList, .reimbursementchallengereport #searchListSelection
+{
+    height: 200px!important;    
+}
+
+/*Contact Form for Reimbursement Challenge Report*/
+#rcrContactForm .contactHeader
+{
+    float:left;
+    display:block;
+    font-weight:bold;
+}
+
+#rcrContactForm p
+{
+    float:right;
+    display:block;
+}
+#rcrContactForm .contactInput
+{
+    display:block;
+    float:left;
+    width:100%;
+}
+#rcrContactForm label{
+    float:left;
+    display:inline-block;
+    padding:2px 0px ;
+    width:75px;
+    margin:2px 0 10px;
+}
+#rcrContactForm input{
+    float:right;
+    display:inline-block;
+    padding:2px 0px;
+    width:250px;
+    margin:2px 0 10px;
+}
+
+#rcrContactAdd
+{
+    right: 0;
+    width: 150px !important;
+}
+
+
+.pagination
+{
+    background-color:#2e59a8;
+}
+
+.rfv
+{
+    display:block;
+}
+
+#spanProducts
+{
+    width: 300px !important;
+}
+
+.contactValidation
+{
+    color: red;
+    float:left;
+}
+.adminEmail
+{
+    right: 15px;
+    position:absolute;
+}
+
+.noborder
+{
+    border-top-width: 0px !important;
+    border-bottom-width: 0px !important;
+    border-left-width: 0px !important;
+    border-right-width: 0px !important;
+    border:none !important;
+}
+/*End RCR Contact Form*/

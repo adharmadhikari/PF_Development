@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Report.master.cs" Inherits="Report" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="main" Runat="Server"> 
+    <asp:ContentPlaceHolder runat="server" ID="main">
+        <telerik:RadSplitter EnableEmbeddedBaseStylesheet="false" SkinID="ImpactradSplitter" runat="server" ID="radSplit" ResizeWithBrowserWindow="true" Width="100%" OnClientLoaded="resizeSplitter" OnClientResized="resizeSplitter" 
+            Height="100%">                
+            <telerik:RadPane runat="server" ID="radPaneNav" Width="20%" CssClass="leftPane"  Scrolling="None">     
+                
+                <div class="reportsBtn"><asp:HyperLink CssClass="impactLink" runat="server" ID="link1" Text="PowerPlanRx Report" NavigateUrl="reports.aspx" /></div>
+                
+                <div class="reportsBtn"><asp:HyperLink CssClass="impactLink" runat="server" ID="link2" Text="Region/District Drill Down Report" NavigateUrl="DistrictRegionBrandReport.aspx?reporttype=1&brandid=0&segment=1&areaid=0&regionid=0&dist=0" /></div>
+              
+                
+            </telerik:RadPane>
+            <telerik:RadSplitBar ID="RadSplitBar1" runat="server" CollapseMode="Forward" />
+            <telerik:RadPane runat="server" ID="radPaneContent" Width="80%" CssClass="rightPane" Scrolling="Both">                
+                <asp:ContentPlaceHolder runat="server" ID="content">
+                </asp:ContentPlaceHolder>
+            </telerik:RadPane>
+        </telerik:RadSplitter>        
+    </asp:ContentPlaceHolder>    
+</asp:Content>

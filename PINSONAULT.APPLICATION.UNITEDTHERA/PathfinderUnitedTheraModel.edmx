@@ -1,0 +1,1368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PathfinderUnitedTheraEntities.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="PathfinderUnitedTheraEntitiesStoreContainer">
+          <EntitySet Name="Contact_Reports" EntityType="PathfinderUnitedTheraEntities.Store.Contact_Reports" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Lkp_RC_Report_Issue" EntityType="PathfinderUnitedTheraEntities.Store.Lkp_RC_Report_Issue" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Lkp_RC_Report_Products_Discussed" EntityType="PathfinderUnitedTheraEntities.Store.Lkp_RC_Report_Products_Discussed" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Lkp_RC_Report_Status" EntityType="PathfinderUnitedTheraEntities.Store.Lkp_RC_Report_Status" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PCN_BIN_Report" EntityType="PathfinderUnitedTheraEntities.Store.PCN_BIN_Report" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Plan_Documents" EntityType="PathfinderUnitedTheraEntities.Store.Plan_Documents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RC_Report_Contacts" EntityType="PathfinderUnitedTheraEntities.Store.RC_Report_Contacts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RC_Report_Plan_Documents" EntityType="PathfinderUnitedTheraEntities.Store.RC_Report_Plan_Documents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RC_Report_Products_Discussed" EntityType="PathfinderUnitedTheraEntities.Store.RC_Report_Products_Discussed" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RC_Reports" EntityType="PathfinderUnitedTheraEntities.Store.RC_Reports" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="V_Account_Managers_By_Territory" EntityType="PathfinderUnitedTheraEntities.Store.V_Account_Managers_By_Territory" store:Type="Views" store:Schema="dbo" store:Name="V_Account_Managers_By_Territory">
+            <DefiningQuery>SELECT 
+      [V_Account_Managers_By_Territory].[User_ID] AS [User_ID], 
+      [V_Account_Managers_By_Territory].[User_F_Name] AS [User_F_Name], 
+      [V_Account_Managers_By_Territory].[User_M_Name] AS [User_M_Name], 
+      [V_Account_Managers_By_Territory].[User_L_Name] AS [User_L_Name], 
+      [V_Account_Managers_By_Territory].[FullName] AS [FullName], 
+      [V_Account_Managers_By_Territory].[Territory_ID] AS [Territory_ID]
+      FROM [dbo].[V_Account_Managers_By_Territory] AS [V_Account_Managers_By_Territory]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_Contact_Report_Products_Discussed" EntityType="PathfinderUnitedTheraEntities.Store.V_Contact_Report_Products_Discussed" store:Type="Views" store:Schema="dbo" store:Name="V_Contact_Report_Products_Discussed">
+            <DefiningQuery>SELECT 
+      [V_Contact_Report_Products_Discussed].[Contact_Report_ID] AS [Contact_Report_ID], 
+      [V_Contact_Report_Products_Discussed].[Client_ID] AS [Client_ID], 
+      [V_Contact_Report_Products_Discussed].[User_ID] AS [User_ID], 
+      [V_Contact_Report_Products_Discussed].[Plan_ID] AS [Plan_ID], 
+      [V_Contact_Report_Products_Discussed].[Drug_Name] AS [Drug_Name], 
+      [V_Contact_Report_Products_Discussed].[Contact_Date] AS [Contact_Date], 
+      [V_Contact_Report_Products_Discussed].[Meeting_Type_ID] AS [Meeting_Type_ID], 
+      [V_Contact_Report_Products_Discussed].[Meeting_Activity_ID] AS [Meeting_Activity_ID], 
+      [V_Contact_Report_Products_Discussed].[Followup_Date] AS [Followup_Date], 
+      [V_Contact_Report_Products_Discussed].[Created_BY] AS [Created_BY], 
+      [V_Contact_Report_Products_Discussed].[Created_DT] AS [Created_DT], 
+      [V_Contact_Report_Products_Discussed].[Modified_BY] AS [Modified_BY], 
+      [V_Contact_Report_Products_Discussed].[Modified_DT] AS [Modified_DT], 
+      [V_Contact_Report_Products_Discussed].[Meeting_Activity_Name] AS [Meeting_Activity_Name], 
+      [V_Contact_Report_Products_Discussed].[Meeting_Type_Name] AS [Meeting_Type_Name]
+      FROM [dbo].[V_Contact_Report_Products_Discussed] AS [V_Contact_Report_Products_Discussed]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_PCN_BIN_Report" EntityType="PathfinderUnitedTheraEntities.Store.V_PCN_BIN_Report" store:Type="Views" store:Schema="dbo" store:Name="V_PCN_BIN_Report">
+            <DefiningQuery>SELECT 
+      [V_PCN_BIN_Report].[Plan_Name] AS [Plan_Name], 
+      [V_PCN_BIN_Report].[Plan_State] AS [Plan_State], 
+      [V_PCN_BIN_Report].[Section_Name] AS [Section_Name], 
+      [V_PCN_BIN_Report].[BIN_Number] AS [BIN_Number], 
+      [V_PCN_BIN_Report].[PCN_Number] AS [PCN_Number]
+      FROM [dbo].[V_PCN_BIN_Report] AS [V_PCN_BIN_Report]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_Plan_Documents" EntityType="PathfinderUnitedTheraEntities.Store.V_Plan_Documents" store:Type="Views" store:Schema="dbo" store:Name="V_Plan_Documents">
+            <DefiningQuery>SELECT 
+      [V_Plan_Documents].[Document_ID] AS [Document_ID], 
+      [V_Plan_Documents].[Plan_ID] AS [Plan_ID], 
+      [V_Plan_Documents].[User_ID] AS [User_ID], 
+      [V_Plan_Documents].[Document_Name] AS [Document_Name], 
+      [V_Plan_Documents].[Document_Original_File] AS [Document_Original_File], 
+      [V_Plan_Documents].[Is_Business_Plan] AS [Is_Business_Plan], 
+      [V_Plan_Documents].[Document_Status] AS [Document_Status], 
+      [V_Plan_Documents].[Document_Date] AS [Document_Date], 
+      [V_Plan_Documents].[Created_BY] AS [Created_BY], 
+      [V_Plan_Documents].[Created_DT] AS [Created_DT], 
+      [V_Plan_Documents].[Modified_BY] AS [Modified_BY], 
+      [V_Plan_Documents].[Modified_DT] AS [Modified_DT]
+      FROM [dbo].[V_Plan_Documents] AS [V_Plan_Documents]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_RC_Report_Drilldown" EntityType="PathfinderUnitedTheraEntities.Store.V_RC_Report_Drilldown" store:Type="Views" store:Schema="dbo" store:Name="V_RC_Report_Drilldown">
+            <DefiningQuery>SELECT 
+      [V_RC_Report_Drilldown].[RC_Report_ID] AS [RC_Report_ID], 
+      [V_RC_Report_Drilldown].[Issue_Name] AS [Issue_Name], 
+      [V_RC_Report_Drilldown].[Issue_ID] AS [Issue_ID], 
+      [V_RC_Report_Drilldown].[Other_Issue] AS [Other_Issue], 
+      [V_RC_Report_Drilldown].[Contact_Date] AS [Contact_Date], 
+      [V_RC_Report_Drilldown].[NAM_ID] AS [NAM_ID], 
+      [V_RC_Report_Drilldown].[Account_Manager] AS [Account_Manager], 
+      [V_RC_Report_Drilldown].[Plan_Name] AS [Plan_Name], 
+      [V_RC_Report_Drilldown].[Plan_ID] AS [Plan_ID], 
+      [V_RC_Report_Drilldown].[Section_ID] AS [Section_ID], 
+      [V_RC_Report_Drilldown].[Section_Name] AS [Section_Name], 
+      [V_RC_Report_Drilldown].[Client_ID] AS [Client_ID], 
+      [V_RC_Report_Drilldown].[Status_Name] AS [Status_Name], 
+      [V_RC_Report_Drilldown].[Drug_Name] AS [Drug_Name], 
+      [V_RC_Report_Drilldown].[Products_Discussed_ID] AS [Products_Discussed_ID], 
+      [V_RC_Report_Drilldown].[Status_ID] AS [Status_ID], 
+      [V_RC_Report_Drilldown].[Geography_Name] AS [Geography_Name], 
+      [V_RC_Report_Drilldown].[ASSIST_Desc] AS [ASSIST_Desc], 
+      [V_RC_Report_Drilldown].[Contact_Name] AS [Contact_Name], 
+      [V_RC_Report_Drilldown].[Team_Comments] AS [Team_Comments]
+      FROM [dbo].[V_RC_Report_Drilldown] AS [V_RC_Report_Drilldown]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_RC_Report_Issue_Details" EntityType="PathfinderUnitedTheraEntities.Store.V_RC_Report_Issue_Details" store:Type="Views" store:Schema="dbo" store:Name="V_RC_Report_Issue_Details">
+            <DefiningQuery>SELECT 
+      [V_RC_Report_Issue_Details].[RC_Report_ID] AS [RC_Report_ID], 
+      [V_RC_Report_Issue_Details].[Issue_ID] AS [Issue_ID], 
+      [V_RC_Report_Issue_Details].[Issue_Name] AS [Issue_Name], 
+      [V_RC_Report_Issue_Details].[Contact_Date] AS [Contact_Date], 
+      [V_RC_Report_Issue_Details].[Followup_Date] AS [Followup_Date], 
+      [V_RC_Report_Issue_Details].[NAM_ID] AS [NAM_ID], 
+      [V_RC_Report_Issue_Details].[Account_Manager] AS [Account_Manager], 
+      [V_RC_Report_Issue_Details].[Plan_Name] AS [Plan_Name], 
+      [V_RC_Report_Issue_Details].[Plan_ID] AS [Plan_ID], 
+      [V_RC_Report_Issue_Details].[Client_ID] AS [Client_ID], 
+      [V_RC_Report_Issue_Details].[Status_Name] AS [Status_Name], 
+      [V_RC_Report_Issue_Details].[Products_Discussed_ID] AS [Products_Discussed_ID], 
+      [V_RC_Report_Issue_Details].[Drug_Name] AS [Drug_Name], 
+      [V_RC_Report_Issue_Details].[Status_ID] AS [Status_ID], 
+      [V_RC_Report_Issue_Details].[Contact_Name] AS [Contact_Name]
+      FROM [dbo].[V_RC_Report_Issue_Details] AS [V_RC_Report_Issue_Details]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_RC_Report_Issue_Summary" EntityType="PathfinderUnitedTheraEntities.Store.V_RC_Report_Issue_Summary" store:Type="Views" store:Schema="dbo" store:Name="V_RC_Report_Issue_Summary">
+            <DefiningQuery>SELECT 
+      [V_RC_Report_Issue_Summary].[RC_Report_ID] AS [RC_Report_ID], 
+      [V_RC_Report_Issue_Summary].[Issue_ID] AS [Issue_ID], 
+      [V_RC_Report_Issue_Summary].[Issue_Name] AS [Issue_Name], 
+      [V_RC_Report_Issue_Summary].[Contact_Date] AS [Contact_Date], 
+      [V_RC_Report_Issue_Summary].[NAM_ID] AS [NAM_ID], 
+      [V_RC_Report_Issue_Summary].[Plan_Name] AS [Plan_Name], 
+      [V_RC_Report_Issue_Summary].[Plan_ID] AS [Plan_ID], 
+      [V_RC_Report_Issue_Summary].[Section_ID] AS [Section_ID], 
+      [V_RC_Report_Issue_Summary].[Client_ID] AS [Client_ID], 
+      [V_RC_Report_Issue_Summary].[User_ID] AS [User_ID], 
+      [V_RC_Report_Issue_Summary].[Status_ID] AS [Status_ID], 
+      [V_RC_Report_Issue_Summary].[Products_Discussed_ID] AS [Products_Discussed_ID], 
+      [V_RC_Report_Issue_Summary].[Drug_Name] AS [Drug_Name]
+      FROM [dbo].[V_RC_Report_Issue_Summary] AS [V_RC_Report_Issue_Summary]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_RC_Report_Products_Discussed" EntityType="PathfinderUnitedTheraEntities.Store.V_RC_Report_Products_Discussed" store:Type="Views" store:Schema="dbo" store:Name="V_RC_Report_Products_Discussed">
+            <DefiningQuery>SELECT 
+      [V_RC_Report_Products_Discussed].[RC_Report_ID] AS [RC_Report_ID], 
+      [V_RC_Report_Products_Discussed].[Client_ID] AS [Client_ID], 
+      [V_RC_Report_Products_Discussed].[User_ID] AS [User_ID], 
+      [V_RC_Report_Products_Discussed].[Plan_ID] AS [Plan_ID], 
+      [V_RC_Report_Products_Discussed].[Drug_Name] AS [Drug_Name], 
+      [V_RC_Report_Products_Discussed].[Products_Discussed_ID] AS [Products_Discussed_ID], 
+      [V_RC_Report_Products_Discussed].[Issue_Name] AS [Issue_Name], 
+      [V_RC_Report_Products_Discussed].[Status_Name] AS [Status_Name], 
+      [V_RC_Report_Products_Discussed].[Contact_Date] AS [Contact_Date], 
+      [V_RC_Report_Products_Discussed].[Followup_Date] AS [Followup_Date], 
+      [V_RC_Report_Products_Discussed].[Created_BY] AS [Created_BY], 
+      [V_RC_Report_Products_Discussed].[Created_DT] AS [Created_DT], 
+      [V_RC_Report_Products_Discussed].[Modified_BY] AS [Modified_BY], 
+      [V_RC_Report_Products_Discussed].[Modified_DT] AS [Modified_DT], 
+      [V_RC_Report_Products_Discussed].[Report_Status] AS [Report_Status]
+      FROM [dbo].[V_RC_Report_Products_Discussed] AS [V_RC_Report_Products_Discussed]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_RCR_Plan_List" EntityType="PathfinderUnitedTheraEntities.Store.V_RCR_Plan_List" store:Type="Views" store:Schema="dbo" store:Name="V_RCR_Plan_List">
+            <DefiningQuery>SELECT 
+      [V_RCR_Plan_List].[Plan_ID] AS [Plan_ID], 
+      [V_RCR_Plan_List].[Plan_Name] AS [Plan_Name], 
+      [V_RCR_Plan_List].[Plan_Other_Name] AS [Plan_Other_Name], 
+      [V_RCR_Plan_List].[Plan_Type_ID] AS [Plan_Type_ID], 
+      [V_RCR_Plan_List].[Plan_Type_Name] AS [Plan_Type_Name], 
+      [V_RCR_Plan_List].[Parent_Plan_Name] AS [Parent_Plan_Name], 
+      [V_RCR_Plan_List].[Plan_State] AS [Plan_State], 
+      [V_RCR_Plan_List].[Plan_Classification_ID] AS [Plan_Classification_ID], 
+      [V_RCR_Plan_List].[Plan_Classification_Name] AS [Plan_Classification_Name], 
+      [V_RCR_Plan_List].[Plan_Accreditation] AS [Plan_Accreditation], 
+      [V_RCR_Plan_List].[Plan_WebSite] AS [Plan_WebSite], 
+      [V_RCR_Plan_List].[Section_ID] AS [Section_ID], 
+      [V_RCR_Plan_List].[Segment_ID] AS [Segment_ID], 
+      [V_RCR_Plan_List].[VISN] AS [VISN], 
+      [V_RCR_Plan_List].[Plan_Comments] AS [Plan_Comments], 
+      [V_RCR_Plan_List].[Has_Commercial_Business] AS [Has_Commercial_Business], 
+      [V_RCR_Plan_List].[Has_Medicare_PartD_Business] AS [Has_Medicare_PartD_Business], 
+      [V_RCR_Plan_List].[Has_Managed_Medicaid_Business] AS [Has_Managed_Medicaid_Business], 
+      [V_RCR_Plan_List].[Total_Covered] AS [Total_Covered], 
+      [V_RCR_Plan_List].[Total_Pharmacy] AS [Total_Pharmacy], 
+      [V_RCR_Plan_List].[Total_Medicare_PartD] AS [Total_Medicare_PartD], 
+      [V_RCR_Plan_List].[States_Serviced] AS [States_Serviced], 
+      [V_RCR_Plan_List].[MAC_Jurisdictions] AS [MAC_Jurisdictions], 
+      [V_RCR_Plan_List].[Fortune_500_Rank] AS [Fortune_500_Rank], 
+      [V_RCR_Plan_List].[Med_D_Offering_ID] AS [Med_D_Offering_ID], 
+      [V_RCR_Plan_List].[Med_D_Offering_Name] AS [Med_D_Offering_Name], 
+      [V_RCR_Plan_List].[Medicaid_Enrollment] AS [Medicaid_Enrollment], 
+      [V_RCR_Plan_List].[Medicaid_Mcare_Enrollment] AS [Medicaid_Mcare_Enrollment], 
+      [V_RCR_Plan_List].[Percent_ManagedCare] AS [Percent_ManagedCare], 
+      [V_RCR_Plan_List].[MMISFAS] AS [MMISFAS], 
+      [V_RCR_Plan_List].[SMPBM] AS [SMPBM], 
+      [V_RCR_Plan_List].[SMHCM] AS [SMHCM], 
+      [V_RCR_Plan_List].[SM_Preferred_Drug_List] AS [SM_Preferred_Drug_List], 
+      [V_RCR_Plan_List].[Drug_Utilization_Review] AS [Drug_Utilization_Review], 
+      [V_RCR_Plan_List].[Status] AS [Status], 
+      [V_RCR_Plan_List].[Is_Profiled] AS [Is_Profiled], 
+      [V_RCR_Plan_List].[Created_BY] AS [Created_BY], 
+      [V_RCR_Plan_List].[Created_DT] AS [Created_DT], 
+      [V_RCR_Plan_List].[Modified_BY] AS [Modified_BY], 
+      [V_RCR_Plan_List].[Modified_DT] AS [Modified_DT], 
+      [V_RCR_Plan_List].[Formulary_Managed_by] AS [Formulary_Managed_by], 
+      [V_RCR_Plan_List].[Section_Name] AS [Section_Name]
+      FROM [dbo].[V_RCR_Plan_List] AS [V_RCR_Plan_List]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="Contact_Reports">
+          <Key>
+            <PropertyRef Name="Contact_Report_ID" />
+          </Key>
+          <Property Name="Contact_Report_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Client_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="Contact_Date" Type="datetime" />
+          <Property Name="Meeting_Type_ID" Type="int" />
+          <Property Name="Meeting_Activity_ID" Type="int" />
+          <Property Name="Followup_Date" Type="datetime" />
+          <Property Name="Created_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Created_DT" Type="datetime" />
+          <Property Name="Modified_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Modified_DT" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lkp_RC_Report_Issue">
+          <Key>
+            <PropertyRef Name="Issue_ID" />
+          </Key>
+          <Property Name="Issue_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Issue_Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Lkp_RC_Report_Products_Discussed">
+          <Key>
+            <PropertyRef Name="Products_Discussed_ID" />
+          </Key>
+          <Property Name="Products_Discussed_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Client_ID" Type="int" />
+          <Property Name="Drug_ID" Type="int" />
+          <Property Name="Drug_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Sort_Index" Type="int" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Created_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Created_DT" Type="datetime" />
+          <Property Name="Modified_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Modified_DT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Lkp_RC_Report_Status">
+          <Key>
+            <PropertyRef Name="Status_ID" />
+          </Key>
+          <Property Name="Status_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Status_Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PCN_BIN_Report">
+          <Key>
+            <PropertyRef Name="Plan_ID" />
+          </Key>
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="BIN_Number" Type="varchar" MaxLength="255" />
+          <Property Name="PCN_Number" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Plan_Documents">
+          <Key>
+            <PropertyRef Name="Document_ID" />
+          </Key>
+          <Property Name="Document_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Document_Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Document_Original_File" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Is_Business_Plan" Type="bit" Nullable="false" />
+          <Property Name="Document_Status" Type="bit" />
+          <Property Name="Document_Date" Type="datetime" Nullable="false" />
+          <Property Name="Created_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Created_DT" Type="datetime" />
+          <Property Name="Modified_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Modified_DT" Type="datetime" />
+          <Property Name="Document_Type_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="RC_Report_Contacts">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Contact_ID" />
+          </Key>
+          <Property Name="RC_Report_ID" Type="int" Nullable="false" />
+          <Property Name="Contact_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Title" Type="varchar" MaxLength="255" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RC_Report_Plan_Documents">
+          <Key>
+            <PropertyRef Name="Document_ID" />
+          </Key>
+          <Property Name="Document_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Document_Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Document_Original_File" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Is_Business_Plan" Type="bit" Nullable="false" />
+          <Property Name="Document_Status" Type="bit" />
+          <Property Name="Document_Date" Type="datetime" Nullable="false" />
+          <Property Name="Created_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Created_DT" Type="datetime" />
+          <Property Name="Modified_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Modified_DT" Type="datetime" />
+          <Property Name="Document_Type_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="RC_Report_Products_Discussed">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Products_Discussed_ID" />
+          </Key>
+          <Property Name="RC_Report_ID" Type="int" Nullable="false" />
+          <Property Name="Products_Discussed_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RC_Reports">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+          </Key>
+          <Property Name="RC_Report_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Client_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="Contact_Date" Type="datetime" />
+          <Property Name="NAM_ID" Type="int" />
+          <Property Name="Status_ID" Type="int" />
+          <Property Name="Followup_Date" Type="datetime" />
+          <Property Name="Created_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Created_DT" Type="datetime" />
+          <Property Name="Modified_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Modified_DT" Type="datetime" Nullable="false" />
+          <Property Name="Other_Issue" Type="varchar" MaxLength="255" />
+          <Property Name="ASSIST_Desc" Type="varchar" MaxLength="255" />
+          <Property Name="Team_Comments" Type="varchar" MaxLength="255" />
+          <Property Name="Issue_ID" Type="int" />
+          <Property Name="Report_Status" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PF_UnitedThera.dbo.V_Account_Managers_By_Territory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_Account_Managers_By_Territory">
+          <Key>
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="Territory_ID" />
+          </Key>
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="User_F_Name" Type="varchar" MaxLength="50" />
+          <Property Name="User_M_Name" Type="varchar" MaxLength="50" />
+          <Property Name="User_L_Name" Type="varchar" MaxLength="50" />
+          <Property Name="FullName" Type="varchar" MaxLength="101" />
+          <Property Name="Territory_ID" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PF_UnitedThera.dbo.V_Contact_Report_Products_Discussed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_Contact_Report_Products_Discussed">
+          <Key>
+            <PropertyRef Name="Contact_Report_ID" />
+            <PropertyRef Name="Client_ID" />
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="Modified_DT" />
+          </Key>
+          <Property Name="Contact_Report_ID" Type="int" Nullable="false" />
+          <Property Name="Client_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="Drug_Name" Type="varchar" MaxLength="500" />
+          <Property Name="Contact_Date" Type="datetime" />
+          <Property Name="Meeting_Type_ID" Type="int" />
+          <Property Name="Meeting_Activity_ID" Type="int" />
+          <Property Name="Followup_Date" Type="datetime" />
+          <Property Name="Created_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Created_DT" Type="datetime" />
+          <Property Name="Modified_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Modified_DT" Type="datetime" Nullable="false" />
+          <Property Name="Meeting_Activity_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Meeting_Type_Name" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PF_UnitedThera.dbo.V_PCN_BIN_Report' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_PCN_BIN_Report">
+          <Key>
+            <PropertyRef Name="Plan_Name" />
+            <PropertyRef Name="Section_Name" />
+          </Key>
+          <Property Name="Plan_Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Plan_State" Type="char" MaxLength="2" />
+          <Property Name="Section_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="BIN_Number" Type="varchar" MaxLength="255" />
+          <Property Name="PCN_Number" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PF_UnitedThera.dbo.V_Plan_Documents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_Plan_Documents">
+          <Key>
+            <PropertyRef Name="Document_ID" />
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="Document_Name" />
+            <PropertyRef Name="Document_Original_File" />
+            <PropertyRef Name="Is_Business_Plan" />
+            <PropertyRef Name="Document_Date" />
+          </Key>
+          <Property Name="Document_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Document_Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Document_Original_File" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Is_Business_Plan" Type="bit" Nullable="false" />
+          <Property Name="Document_Status" Type="bit" />
+          <Property Name="Document_Date" Type="datetime" Nullable="false" />
+          <Property Name="Created_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Created_DT" Type="datetime" />
+          <Property Name="Modified_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Modified_DT" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PF_UnitedThera.dbo.V_RC_Report_Drilldown' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_RC_Report_Drilldown">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Issue_Name" />
+            <PropertyRef Name="Plan_Name" />
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="Section_ID" />
+            <PropertyRef Name="Section_Name" />
+            <PropertyRef Name="Client_ID" />
+            <PropertyRef Name="Status_Name" />
+            <PropertyRef Name="Geography_Name" />
+          </Key>
+          <Property Name="RC_Report_ID" Type="int" Nullable="false" />
+          <Property Name="Issue_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Issue_ID" Type="int" />
+          <Property Name="Other_Issue" Type="varchar" MaxLength="255" />
+          <Property Name="Contact_Date" Type="datetime" />
+          <Property Name="NAM_ID" Type="int" />
+          <Property Name="Account_Manager" Type="varchar" MaxLength="102" />
+          <Property Name="Plan_Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="Section_ID" Type="int" Nullable="false" />
+          <Property Name="Section_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Client_ID" Type="int" Nullable="false" />
+          <Property Name="Status_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Drug_Name" Type="varchar" MaxLength="500" />
+          <Property Name="Products_Discussed_ID" Type="varchar" MaxLength="500" />
+          <Property Name="Status_ID" Type="int" />
+          <Property Name="Geography_Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ASSIST_Desc" Type="varchar" MaxLength="255" />
+          <Property Name="Contact_Name" Type="nvarchar(max)" />
+          <Property Name="Team_Comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PF_UnitedThera.dbo.V_RC_Report_Issue_Details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_RC_Report_Issue_Details">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Issue_Name" />
+            <PropertyRef Name="Plan_Name" />
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="Client_ID" />
+            <PropertyRef Name="Status_Name" />
+          </Key>
+          <Property Name="RC_Report_ID" Type="int" Nullable="false" />
+          <Property Name="Issue_ID" Type="int" />
+          <Property Name="Issue_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Contact_Date" Type="datetime" />
+          <Property Name="Followup_Date" Type="datetime" />
+          <Property Name="NAM_ID" Type="int" />
+          <Property Name="Account_Manager" Type="varchar" MaxLength="102" />
+          <Property Name="Plan_Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="Client_ID" Type="int" Nullable="false" />
+          <Property Name="Status_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Products_Discussed_ID" Type="varchar" MaxLength="500" />
+          <Property Name="Drug_Name" Type="varchar" MaxLength="500" />
+          <Property Name="Status_ID" Type="int" />
+          <Property Name="Contact_Name" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PF_UnitedThera.dbo.V_RC_Report_Issue_Summary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_RC_Report_Issue_Summary">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Issue_Name" />
+            <PropertyRef Name="Plan_Name" />
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="Section_ID" />
+            <PropertyRef Name="Client_ID" />
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="RC_Report_ID" Type="int" Nullable="false" />
+          <Property Name="Issue_ID" Type="int" />
+          <Property Name="Issue_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Contact_Date" Type="datetime" />
+          <Property Name="NAM_ID" Type="int" />
+          <Property Name="Plan_Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="Section_ID" Type="int" Nullable="false" />
+          <Property Name="Client_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Status_ID" Type="int" />
+          <Property Name="Products_Discussed_ID" Type="varchar" MaxLength="500" />
+          <Property Name="Drug_Name" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PF_UnitedThera.dbo.V_RC_Report_Products_Discussed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_RC_Report_Products_Discussed">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Client_ID" />
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="Issue_Name" />
+            <PropertyRef Name="Status_Name" />
+            <PropertyRef Name="Modified_DT" />
+            <PropertyRef Name="Report_Status" />
+          </Key>
+          <Property Name="RC_Report_ID" Type="int" Nullable="false" />
+          <Property Name="Client_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="Drug_Name" Type="varchar" MaxLength="500" />
+          <Property Name="Products_Discussed_ID" Type="varchar" MaxLength="500" />
+          <Property Name="Issue_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Status_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Contact_Date" Type="datetime" />
+          <Property Name="Followup_Date" Type="datetime" />
+          <Property Name="Created_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Created_DT" Type="datetime" />
+          <Property Name="Modified_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Modified_DT" Type="datetime" Nullable="false" />
+          <Property Name="Report_Status" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PF_UnitedThera.dbo.V_RCR_Plan_List' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_RCR_Plan_List">
+          <Key>
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="Plan_Name" />
+            <PropertyRef Name="Section_ID" />
+            <PropertyRef Name="Has_Commercial_Business" />
+            <PropertyRef Name="Has_Medicare_PartD_Business" />
+            <PropertyRef Name="Has_Managed_Medicaid_Business" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="Is_Profiled" />
+            <PropertyRef Name="Section_Name" />
+          </Key>
+          <Property Name="Plan_ID" Type="int" Nullable="false" />
+          <Property Name="Plan_Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Plan_Other_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Plan_Type_ID" Type="int" />
+          <Property Name="Plan_Type_Name" Type="varchar" MaxLength="100" />
+          <Property Name="Parent_Plan_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Plan_State" Type="char" MaxLength="2" />
+          <Property Name="Plan_Classification_ID" Type="int" />
+          <Property Name="Plan_Classification_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Plan_Accreditation" Type="varchar" MaxLength="255" />
+          <Property Name="Plan_WebSite" Type="varchar" MaxLength="255" />
+          <Property Name="Section_ID" Type="int" Nullable="false" />
+          <Property Name="Segment_ID" Type="int" />
+          <Property Name="VISN" Type="int" />
+          <Property Name="Plan_Comments" Type="varchar(max)" />
+          <Property Name="Has_Commercial_Business" Type="bit" Nullable="false" />
+          <Property Name="Has_Medicare_PartD_Business" Type="bit" Nullable="false" />
+          <Property Name="Has_Managed_Medicaid_Business" Type="bit" Nullable="false" />
+          <Property Name="Total_Covered" Type="int" />
+          <Property Name="Total_Pharmacy" Type="int" />
+          <Property Name="Total_Medicare_PartD" Type="int" />
+          <Property Name="States_Serviced" Type="varchar" MaxLength="255" />
+          <Property Name="MAC_Jurisdictions" Type="varchar" MaxLength="255" />
+          <Property Name="Fortune_500_Rank" Type="int" />
+          <Property Name="Med_D_Offering_ID" Type="int" />
+          <Property Name="Med_D_Offering_Name" Type="varchar" MaxLength="16" />
+          <Property Name="Medicaid_Enrollment" Type="int" />
+          <Property Name="Medicaid_Mcare_Enrollment" Type="int" />
+          <Property Name="Percent_ManagedCare" Type="decimal" Scale="2" />
+          <Property Name="MMISFAS" Type="varchar" MaxLength="255" />
+          <Property Name="SMPBM" Type="varchar" MaxLength="255" />
+          <Property Name="SMHCM" Type="varchar" MaxLength="255" />
+          <Property Name="SM_Preferred_Drug_List" Type="varchar" MaxLength="255" />
+          <Property Name="Drug_Utilization_Review" Type="varchar(max)" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Is_Profiled" Type="bit" Nullable="false" />
+          <Property Name="Created_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Created_DT" Type="datetime" />
+          <Property Name="Modified_BY" Type="varchar" MaxLength="50" />
+          <Property Name="Modified_DT" Type="datetime" />
+          <Property Name="Formulary_Managed_by" Type="varchar" MaxLength="250" />
+          <Property Name="Section_Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Function Name="usf_GetProductsDiscussedIds" ReturnType="varchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Contact_Report_ID" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PathfinderUnitedTheraModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="PathfinderUnitedTheraEntities" >
+          <EntitySet Name="Plan_Documents" EntityType="PathfinderUnitedTheraModel.Plan_Documents" />
+          <EntitySet Name="PlanDocumentsViewSet" EntityType="PathfinderUnitedTheraModel.PlanDocumentsView" />
+          <EntitySet Name="ContactReportProductsDiscussedViewSet" EntityType="PathfinderUnitedTheraModel.ContactReportProductsDiscussedView" />
+          <EntitySet Name="AccountManagersByTerritoryViewSet" EntityType="PathfinderUnitedTheraModel.AccountManagersByTerritoryView" />
+          <EntitySet Name="Contact_Reports" EntityType="PathfinderUnitedTheraModel.Contact_Reports" />
+          <EntitySet Name="PlanGridSet" EntityType="PathfinderUnitedTheraModel.PlanGrid" />
+          <EntitySet Name="RCReportPlanDocumentsSet" EntityType="PathfinderUnitedTheraModel.RCReportPlanDocuments" />
+          <EntitySet Name="LkpRCReportStatusSet" EntityType="PathfinderUnitedTheraModel.LkpRCReportStatus" />
+          <EntitySet Name="RCReportContactsSet" EntityType="PathfinderUnitedTheraModel.RCReportContacts" />
+          <EntitySet Name="RCReportProductsDiscussedSet" EntityType="PathfinderUnitedTheraModel.RCReportProductsDiscussed" />
+          <EntitySet Name="RCReportProductsDiscussedViewSet" EntityType="PathfinderUnitedTheraModel.RCReportProductsDiscussedView" />
+          <EntitySet Name="RCReportsSet" EntityType="PathfinderUnitedTheraModel.RCReports" />
+          <EntitySet Name="LkpRCReportIssueSet" EntityType="PathfinderUnitedTheraModel.LkpRCReportIssue" />
+          <EntitySet Name="LkpRCReportProductsDiscussedSet" EntityType="PathfinderUnitedTheraModel.LkpRCReportProductsDiscussed" />
+          <EntitySet Name="RCReportIssueSummaryViewSet" EntityType="PathfinderUnitedTheraModel.RCReportIssueSummaryView" />
+          <EntitySet Name="RCReportIssueDetailsViewSet" EntityType="PathfinderUnitedTheraModel.RCReportIssueDetailsView" />
+          <EntitySet Name="RCReportDrilldownViewSet" EntityType="PathfinderUnitedTheraModel.RCReportDrilldownView" />
+          <EntitySet Name="PCNBINSet" EntityType="PathfinderUnitedTheraModel.PCNBIN" />
+          <EntitySet Name="PCNBINReportViewSet" EntityType="PathfinderUnitedTheraModel.PCNBINReportView" />
+        </EntityContainer>
+        <EntityType Name="Plan_Documents">
+          <Key>
+            <PropertyRef Name="Document_ID" />
+          </Key>
+          <Property Type="Int32" Name="Document_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <Property Type="String" Name="Document_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Document_Original_File" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Is_Business_Plan" Nullable="false" />
+          <Property Type="Boolean" Name="Document_Status" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Created_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Created_DT" Precision="3" />
+          <Property Type="String" Name="Modified_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Modified_DT" Precision="3" />
+          <Property Type="Int32" Name="Document_Type_ID" />
+        </EntityType>
+        <EntityType Name="PlanDocumentsView">
+          <Key>
+            <PropertyRef Name="Document_ID" />
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="Document_Name" />
+            <PropertyRef Name="Document_Original_File" />
+            <PropertyRef Name="Is_Business_Plan" />
+            <PropertyRef Name="Document_Date" />
+          </Key>
+          <Property Type="Int32" Name="Document_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <Property Type="String" Name="Document_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Document_Original_File" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Is_Business_Plan" Nullable="false" />
+          <Property Type="Boolean" Name="Document_Status" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Created_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Created_DT" Precision="3" />
+          <Property Type="String" Name="Modified_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Modified_DT" Precision="3" />
+        </EntityType>
+        <EntityType Name="ContactReportProductsDiscussedView">
+          <Key>
+            <PropertyRef Name="Contact_Report_ID" />
+            <PropertyRef Name="Client_ID" />
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="Modified_DT" />
+          </Key>
+          <Property Type="Int32" Name="Contact_Report_ID" Nullable="false" />
+          <Property Type="Int32" Name="Client_ID" Nullable="false" />
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="String" Name="Drug_Name" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Contact_Date" Precision="3" />
+          <Property Type="Int32" Name="Meeting_Type_ID" />
+          <Property Type="Int32" Name="Meeting_Activity_ID" />
+          <Property Type="DateTime" Name="Followup_Date" Precision="3" />
+          <Property Type="String" Name="Created_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Created_DT" Precision="3" />
+          <Property Type="String" Name="Modified_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Modified_DT" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Meeting_Activity_Name" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Meeting_Type_Name" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AccountManagersByTerritoryView">
+          <Key>
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="Territory_ID" />
+          </Key>
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <Property Type="String" Name="User_F_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="User_M_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="User_L_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FullName" MaxLength="101" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Territory_ID" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Contact_Reports">
+          <Key>
+            <PropertyRef Name="Contact_Report_ID" />
+          </Key>
+          <Property Type="Int32" Name="Contact_Report_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="Client_ID" Nullable="false" />
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="DateTime" Name="Contact_Date" Precision="3" />
+          <Property Type="Int32" Name="Meeting_Type_ID" />
+          <Property Type="Int32" Name="Meeting_Activity_ID" />
+          <Property Type="DateTime" Name="Followup_Date" Precision="3" />
+          <Property Type="String" Name="Created_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Created_DT" Precision="3" />
+          <Property Type="String" Name="Modified_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Modified_DT" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="PlanGrid">
+          <Key>
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="Plan_Name" />
+            <PropertyRef Name="Section_ID" />
+            <PropertyRef Name="Has_Commercial_Business" />
+            <PropertyRef Name="Has_Medicare_PartD_Business" />
+            <PropertyRef Name="Has_Managed_Medicaid_Business" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="Is_Profiled" />
+            <PropertyRef Name="Section_Name" />
+          </Key>
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="String" Name="Plan_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Plan_Other_Name" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Plan_Type_ID" />
+          <Property Type="String" Name="Plan_Type_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Parent_Plan_Name" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Plan_State" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="Plan_Classification_ID" />
+          <Property Type="String" Name="Plan_Classification_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Plan_Accreditation" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Plan_WebSite" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Section_ID" Nullable="false" />
+          <Property Type="Int32" Name="Segment_ID" />
+          <Property Type="Int32" Name="VISN" />
+          <Property Type="String" Name="Plan_Comments" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Has_Commercial_Business" Nullable="false" />
+          <Property Type="Boolean" Name="Has_Medicare_PartD_Business" Nullable="false" />
+          <Property Type="Boolean" Name="Has_Managed_Medicaid_Business" Nullable="false" />
+          <Property Type="Int32" Name="Total_Covered" />
+          <Property Type="Int32" Name="Total_Pharmacy" />
+          <Property Type="Int32" Name="Total_Medicare_PartD" />
+          <Property Type="String" Name="States_Serviced" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MAC_Jurisdictions" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Fortune_500_Rank" />
+          <Property Type="Int32" Name="Med_D_Offering_ID" />
+          <Property Type="String" Name="Med_D_Offering_Name" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Medicaid_Enrollment" />
+          <Property Type="Int32" Name="Medicaid_Mcare_Enrollment" />
+          <Property Type="Decimal" Name="Percent_ManagedCare" Precision="18" Scale="2" />
+          <Property Type="String" Name="MMISFAS" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SMPBM" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SMHCM" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SM_Preferred_Drug_List" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Drug_Utilization_Review" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Status" Nullable="false" />
+          <Property Type="Boolean" Name="Is_Profiled" Nullable="false" />
+          <Property Type="String" Name="Created_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Created_DT" Precision="3" />
+          <Property Type="String" Name="Modified_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Modified_DT" Precision="3" />
+          <Property Type="String" Name="Formulary_Managed_by" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Section_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RCReportPlanDocuments">
+          <Key>
+            <PropertyRef Name="Document_ID" />
+          </Key>
+          <Property Type="Int32" Name="Document_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <Property Type="String" Name="Document_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Document_Original_File" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Is_Business_Plan" Nullable="false" />
+          <Property Type="Boolean" Name="Document_Status" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Created_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Created_DT" Precision="3" />
+          <Property Type="String" Name="Modified_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Modified_DT" Precision="3" />
+          <Property Type="Int32" Name="Document_Type_ID" />
+        </EntityType>
+        <EntityType Name="LkpRCReportStatus">
+          <Key>
+            <PropertyRef Name="Status_ID" />
+          </Key>
+          <Property Type="Int32" Name="Status_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Status_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RCReportContacts">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Contact_ID" />
+          </Key>
+          <Property Type="Int32" Name="RC_Report_ID" Nullable="false" />
+          <Property Type="Int32" Name="Contact_ID" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Title" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RCReportProductsDiscussed">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Products_Discussed_ID" />
+          </Key>
+          <Property Type="Int32" Name="RC_Report_ID" Nullable="false" />
+          <Property Type="Int32" Name="Products_Discussed_ID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RCReportProductsDiscussedView">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Client_ID" />
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="Issue_Name" />
+            <PropertyRef Name="Status_Name" />
+            <PropertyRef Name="Modified_DT" />
+            <PropertyRef Name="Report_Status" />
+          </Key>
+          <Property Type="Int32" Name="RC_Report_ID" Nullable="false" />
+          <Property Type="Int32" Name="Client_ID" Nullable="false" />
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="String" Name="Drug_Name" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Issue_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Contact_Date" Precision="3" />
+          <Property Type="DateTime" Name="Followup_Date" Precision="3" />
+          <Property Type="String" Name="Created_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Created_DT" Precision="3" />
+          <Property Type="String" Name="Modified_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Modified_DT" Nullable="false" Precision="3" />
+          <Property Type="Boolean" Name="Report_Status" Nullable="false" />
+          <Property Type="String" Name="Products_Discussed_ID" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RCReports">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+          </Key>
+          <Property Type="Int32" Name="RC_Report_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="Client_ID" Nullable="false" />
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="DateTime" Name="Contact_Date" Precision="3" />
+          <Property Type="Int32" Name="NAM_ID" />
+          <Property Type="Int32" Name="Status_ID" />
+          <Property Type="DateTime" Name="Followup_Date" Precision="3" />
+          <Property Type="String" Name="Created_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Created_DT" Precision="3" />
+          <Property Type="String" Name="Modified_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Modified_DT" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Other_Issue" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ASSIST_Desc" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Team_Comments" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Issue_ID" />
+          <Property Type="Boolean" Name="Report_Status" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LkpRCReportIssue">
+          <Key>
+            <PropertyRef Name="Issue_ID" />
+          </Key>
+          <Property Type="Int32" Name="Issue_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Issue_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LkpRCReportProductsDiscussed">
+          <Key>
+            <PropertyRef Name="Products_Discussed_ID" />
+          </Key>
+          <Property Type="Int32" Name="Products_Discussed_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="Client_ID" />
+          <Property Type="Int32" Name="Drug_ID" />
+          <Property Type="String" Name="Drug_Name" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Sort_Index" />
+          <Property Type="Boolean" Name="Status" />
+          <Property Type="String" Name="Created_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Created_DT" Precision="3" />
+          <Property Type="String" Name="Modified_BY" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Modified_DT" Precision="3" />
+        </EntityType>
+        <EntityType Name="RCReportIssueSummaryView">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Issue_Name" />
+            <PropertyRef Name="Plan_Name" />
+            <PropertyRef Name="Section_ID" />
+            <PropertyRef Name="Client_ID" />
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="Plan_ID" />
+          </Key>
+          <Property Type="Int32" Name="RC_Report_ID" Nullable="false" />
+          <Property Type="Int32" Name="Issue_ID" />
+          <Property Type="String" Name="Issue_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Contact_Date" Precision="3" />
+          <Property Type="Int32" Name="NAM_ID" />
+          <Property Type="String" Name="Plan_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Section_ID" Nullable="false" />
+          <Property Type="Int32" Name="Client_ID" Nullable="false" />
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <Property Type="String" Name="Products_Discussed_ID" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="Int32" Name="Status_ID" />
+          <Property Type="String" Name="Drug_Name" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RCReportIssueDetailsView">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Issue_Name" />
+            <PropertyRef Name="Plan_Name" />
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="Client_ID" />
+            <PropertyRef Name="Status_Name" />
+          </Key>
+          <Property Type="Int32" Name="RC_Report_ID" Nullable="false" />
+          <Property Type="Int32" Name="Issue_ID" />
+          <Property Type="String" Name="Issue_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Contact_Date" Precision="3" />
+          <Property Type="DateTime" Name="Followup_Date" Precision="3" />
+          <Property Type="Int32" Name="NAM_ID" />
+          <Property Type="String" Name="Account_Manager" MaxLength="102" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Plan_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="Int32" Name="Client_ID" Nullable="false" />
+          <Property Type="String" Name="Status_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Products_Discussed_ID" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Drug_Name" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Status_ID" />
+          <Property Type="String" Name="Contact_Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RCReportDrilldownView">
+          <Key>
+            <PropertyRef Name="RC_Report_ID" />
+            <PropertyRef Name="Issue_Name" />
+            <PropertyRef Name="Plan_Name" />
+            <PropertyRef Name="Plan_ID" />
+            <PropertyRef Name="Section_ID" />
+            <PropertyRef Name="Section_Name" />
+            <PropertyRef Name="Client_ID" />
+            <PropertyRef Name="Status_Name" />
+            <PropertyRef Name="Geography_Name" />
+          </Key>
+          <Property Type="Int32" Name="RC_Report_ID" Nullable="false" />
+          <Property Type="String" Name="Issue_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Issue_ID" />
+          <Property Type="String" Name="Other_Issue" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Contact_Date" Precision="3" />
+          <Property Type="Int32" Name="NAM_ID" />
+          <Property Type="String" Name="Account_Manager" MaxLength="102" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Plan_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="Int32" Name="Section_ID" Nullable="false" />
+          <Property Type="String" Name="Section_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Client_ID" Nullable="false" />
+          <Property Type="String" Name="Status_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Drug_Name" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Products_Discussed_ID" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Status_ID" />
+          <Property Type="String" Name="Geography_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ASSIST_Desc" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Contact_Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Team_Comments" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PCNBIN">
+          <Key>
+            <PropertyRef Name="Plan_ID" />
+          </Key>
+          <Property Type="Int32" Name="Plan_ID" Nullable="false" />
+          <Property Type="String" Name="BIN_Number" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PCN_Number" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PCNBINReportView">
+          <Key>
+            <PropertyRef Name="Plan_Name" />
+            <PropertyRef Name="Section_Name" />
+          </Key>
+          <Property Type="String" Name="Plan_Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Plan_State" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Section_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BIN_Number" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PCN_Number" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="PathfinderUnitedTheraEntitiesStoreContainer" CdmEntityContainer="PathfinderUnitedTheraEntities" >
+          <EntitySetMapping Name="Plan_Documents">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.Plan_Documents">
+              <MappingFragment StoreEntitySet="Plan_Documents">
+                <ScalarProperty Name="Document_Type_ID" ColumnName="Document_Type_ID" />
+                <ScalarProperty Name="Modified_DT" ColumnName="Modified_DT" />
+                <ScalarProperty Name="Modified_BY" ColumnName="Modified_BY" />
+                <ScalarProperty Name="Created_DT" ColumnName="Created_DT" />
+                <ScalarProperty Name="Created_BY" ColumnName="Created_BY" />
+                <ScalarProperty Name="Document_Date" ColumnName="Document_Date" />
+                <ScalarProperty Name="Document_Status" ColumnName="Document_Status" />
+                <ScalarProperty Name="Is_Business_Plan" ColumnName="Is_Business_Plan" />
+                <ScalarProperty Name="Document_Original_File" ColumnName="Document_Original_File" />
+                <ScalarProperty Name="Document_Name" ColumnName="Document_Name" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+                <ScalarProperty Name="Document_ID" ColumnName="Document_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanDocumentsViewSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.PlanDocumentsView">
+              <MappingFragment StoreEntitySet="V_Plan_Documents">
+                <ScalarProperty Name="Modified_DT" ColumnName="Modified_DT" />
+                <ScalarProperty Name="Modified_BY" ColumnName="Modified_BY" />
+                <ScalarProperty Name="Created_DT" ColumnName="Created_DT" />
+                <ScalarProperty Name="Created_BY" ColumnName="Created_BY" />
+                <ScalarProperty Name="Document_Date" ColumnName="Document_Date" />
+                <ScalarProperty Name="Document_Status" ColumnName="Document_Status" />
+                <ScalarProperty Name="Is_Business_Plan" ColumnName="Is_Business_Plan" />
+                <ScalarProperty Name="Document_Original_File" ColumnName="Document_Original_File" />
+                <ScalarProperty Name="Document_Name" ColumnName="Document_Name" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+                <ScalarProperty Name="Document_ID" ColumnName="Document_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactReportProductsDiscussedViewSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.ContactReportProductsDiscussedView">
+              <MappingFragment StoreEntitySet="V_Contact_Report_Products_Discussed">
+                <ScalarProperty Name="Meeting_Type_Name" ColumnName="Meeting_Type_Name" />
+                <ScalarProperty Name="Meeting_Activity_Name" ColumnName="Meeting_Activity_Name" />
+                <ScalarProperty Name="Modified_DT" ColumnName="Modified_DT" />
+                <ScalarProperty Name="Modified_BY" ColumnName="Modified_BY" />
+                <ScalarProperty Name="Created_DT" ColumnName="Created_DT" />
+                <ScalarProperty Name="Created_BY" ColumnName="Created_BY" />
+                <ScalarProperty Name="Followup_Date" ColumnName="Followup_Date" />
+                <ScalarProperty Name="Meeting_Activity_ID" ColumnName="Meeting_Activity_ID" />
+                <ScalarProperty Name="Meeting_Type_ID" ColumnName="Meeting_Type_ID" />
+                <ScalarProperty Name="Contact_Date" ColumnName="Contact_Date" />
+                <ScalarProperty Name="Drug_Name" ColumnName="Drug_Name" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="Contact_Report_ID" ColumnName="Contact_Report_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountManagersByTerritoryViewSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.AccountManagersByTerritoryView">
+              <MappingFragment StoreEntitySet="V_Account_Managers_By_Territory">
+                <ScalarProperty Name="Territory_ID" ColumnName="Territory_ID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="User_L_Name" ColumnName="User_L_Name" />
+                <ScalarProperty Name="User_M_Name" ColumnName="User_M_Name" />
+                <ScalarProperty Name="User_F_Name" ColumnName="User_F_Name" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contact_Reports">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.Contact_Reports">
+              <MappingFragment StoreEntitySet="Contact_Reports">
+                <ScalarProperty Name="Modified_DT" ColumnName="Modified_DT" />
+                <ScalarProperty Name="Modified_BY" ColumnName="Modified_BY" />
+                <ScalarProperty Name="Created_DT" ColumnName="Created_DT" />
+                <ScalarProperty Name="Created_BY" ColumnName="Created_BY" />
+                <ScalarProperty Name="Followup_Date" ColumnName="Followup_Date" />
+                <ScalarProperty Name="Meeting_Activity_ID" ColumnName="Meeting_Activity_ID" />
+                <ScalarProperty Name="Meeting_Type_ID" ColumnName="Meeting_Type_ID" />
+                <ScalarProperty Name="Contact_Date" ColumnName="Contact_Date" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="Contact_Report_ID" ColumnName="Contact_Report_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanGridSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.PlanGrid">
+              <MappingFragment StoreEntitySet="V_RCR_Plan_List">
+                <ScalarProperty Name="Section_Name" ColumnName="Section_Name" />
+                <ScalarProperty Name="Formulary_Managed_by" ColumnName="Formulary_Managed_by" />
+                <ScalarProperty Name="Modified_DT" ColumnName="Modified_DT" />
+                <ScalarProperty Name="Modified_BY" ColumnName="Modified_BY" />
+                <ScalarProperty Name="Created_DT" ColumnName="Created_DT" />
+                <ScalarProperty Name="Created_BY" ColumnName="Created_BY" />
+                <ScalarProperty Name="Is_Profiled" ColumnName="Is_Profiled" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Drug_Utilization_Review" ColumnName="Drug_Utilization_Review" />
+                <ScalarProperty Name="SM_Preferred_Drug_List" ColumnName="SM_Preferred_Drug_List" />
+                <ScalarProperty Name="SMHCM" ColumnName="SMHCM" />
+                <ScalarProperty Name="SMPBM" ColumnName="SMPBM" />
+                <ScalarProperty Name="MMISFAS" ColumnName="MMISFAS" />
+                <ScalarProperty Name="Percent_ManagedCare" ColumnName="Percent_ManagedCare" />
+                <ScalarProperty Name="Medicaid_Mcare_Enrollment" ColumnName="Medicaid_Mcare_Enrollment" />
+                <ScalarProperty Name="Medicaid_Enrollment" ColumnName="Medicaid_Enrollment" />
+                <ScalarProperty Name="Med_D_Offering_Name" ColumnName="Med_D_Offering_Name" />
+                <ScalarProperty Name="Med_D_Offering_ID" ColumnName="Med_D_Offering_ID" />
+                <ScalarProperty Name="Fortune_500_Rank" ColumnName="Fortune_500_Rank" />
+                <ScalarProperty Name="MAC_Jurisdictions" ColumnName="MAC_Jurisdictions" />
+                <ScalarProperty Name="States_Serviced" ColumnName="States_Serviced" />
+                <ScalarProperty Name="Total_Medicare_PartD" ColumnName="Total_Medicare_PartD" />
+                <ScalarProperty Name="Total_Pharmacy" ColumnName="Total_Pharmacy" />
+                <ScalarProperty Name="Total_Covered" ColumnName="Total_Covered" />
+                <ScalarProperty Name="Has_Managed_Medicaid_Business" ColumnName="Has_Managed_Medicaid_Business" />
+                <ScalarProperty Name="Has_Medicare_PartD_Business" ColumnName="Has_Medicare_PartD_Business" />
+                <ScalarProperty Name="Has_Commercial_Business" ColumnName="Has_Commercial_Business" />
+                <ScalarProperty Name="Plan_Comments" ColumnName="Plan_Comments" />
+                <ScalarProperty Name="VISN" ColumnName="VISN" />
+                <ScalarProperty Name="Segment_ID" ColumnName="Segment_ID" />
+                <ScalarProperty Name="Section_ID" ColumnName="Section_ID" />
+                <ScalarProperty Name="Plan_WebSite" ColumnName="Plan_WebSite" />
+                <ScalarProperty Name="Plan_Accreditation" ColumnName="Plan_Accreditation" />
+                <ScalarProperty Name="Plan_Classification_Name" ColumnName="Plan_Classification_Name" />
+                <ScalarProperty Name="Plan_Classification_ID" ColumnName="Plan_Classification_ID" />
+                <ScalarProperty Name="Plan_State" ColumnName="Plan_State" />
+                <ScalarProperty Name="Parent_Plan_Name" ColumnName="Parent_Plan_Name" />
+                <ScalarProperty Name="Plan_Type_Name" ColumnName="Plan_Type_Name" />
+                <ScalarProperty Name="Plan_Type_ID" ColumnName="Plan_Type_ID" />
+                <ScalarProperty Name="Plan_Other_Name" ColumnName="Plan_Other_Name" />
+                <ScalarProperty Name="Plan_Name" ColumnName="Plan_Name" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RCReportPlanDocumentsSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.RCReportPlanDocuments">
+              <MappingFragment StoreEntitySet="RC_Report_Plan_Documents">
+                <ScalarProperty Name="Document_Type_ID" ColumnName="Document_Type_ID" />
+                <ScalarProperty Name="Modified_DT" ColumnName="Modified_DT" />
+                <ScalarProperty Name="Modified_BY" ColumnName="Modified_BY" />
+                <ScalarProperty Name="Created_DT" ColumnName="Created_DT" />
+                <ScalarProperty Name="Created_BY" ColumnName="Created_BY" />
+                <ScalarProperty Name="Document_Date" ColumnName="Document_Date" />
+                <ScalarProperty Name="Document_Status" ColumnName="Document_Status" />
+                <ScalarProperty Name="Is_Business_Plan" ColumnName="Is_Business_Plan" />
+                <ScalarProperty Name="Document_Original_File" ColumnName="Document_Original_File" />
+                <ScalarProperty Name="Document_Name" ColumnName="Document_Name" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+                <ScalarProperty Name="Document_ID" ColumnName="Document_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LkpRCReportStatusSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.LkpRCReportStatus">
+              <MappingFragment StoreEntitySet="Lkp_RC_Report_Status">
+                <ScalarProperty Name="Status_Name" ColumnName="Status_Name" />
+                <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RCReportContactsSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.RCReportContacts">
+              <MappingFragment StoreEntitySet="RC_Report_Contacts">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Contact_ID" ColumnName="Contact_ID" />
+                <ScalarProperty Name="RC_Report_ID" ColumnName="RC_Report_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RCReportProductsDiscussedSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.RCReportProductsDiscussed">
+              <MappingFragment StoreEntitySet="RC_Report_Products_Discussed">
+                <ScalarProperty Name="Products_Discussed_ID" ColumnName="Products_Discussed_ID" />
+                <ScalarProperty Name="RC_Report_ID" ColumnName="RC_Report_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RCReportProductsDiscussedViewSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.RCReportProductsDiscussedView">
+              <MappingFragment StoreEntitySet="V_RC_Report_Products_Discussed">
+                <ScalarProperty Name="Products_Discussed_ID" ColumnName="Products_Discussed_ID" />
+                <ScalarProperty Name="Report_Status" ColumnName="Report_Status" />
+                <ScalarProperty Name="Modified_DT" ColumnName="Modified_DT" />
+                <ScalarProperty Name="Modified_BY" ColumnName="Modified_BY" />
+                <ScalarProperty Name="Created_DT" ColumnName="Created_DT" />
+                <ScalarProperty Name="Created_BY" ColumnName="Created_BY" />
+                <ScalarProperty Name="Followup_Date" ColumnName="Followup_Date" />
+                <ScalarProperty Name="Contact_Date" ColumnName="Contact_Date" />
+                <ScalarProperty Name="Status_Name" ColumnName="Status_Name" />
+                <ScalarProperty Name="Issue_Name" ColumnName="Issue_Name" />
+                <ScalarProperty Name="Drug_Name" ColumnName="Drug_Name" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="RC_Report_ID" ColumnName="RC_Report_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RCReportsSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.RCReports">
+              <MappingFragment StoreEntitySet="RC_Reports">
+                <ScalarProperty Name="Report_Status" ColumnName="Report_Status" />
+                <ScalarProperty Name="Issue_ID" ColumnName="Issue_ID" />
+                <ScalarProperty Name="Team_Comments" ColumnName="Team_Comments" />
+                <ScalarProperty Name="ASSIST_Desc" ColumnName="ASSIST_Desc" />
+                <ScalarProperty Name="Other_Issue" ColumnName="Other_Issue" />
+                <ScalarProperty Name="Modified_DT" ColumnName="Modified_DT" />
+                <ScalarProperty Name="Modified_BY" ColumnName="Modified_BY" />
+                <ScalarProperty Name="Created_DT" ColumnName="Created_DT" />
+                <ScalarProperty Name="Created_BY" ColumnName="Created_BY" />
+                <ScalarProperty Name="Followup_Date" ColumnName="Followup_Date" />
+                <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+                <ScalarProperty Name="NAM_ID" ColumnName="NAM_ID" />
+                <ScalarProperty Name="Contact_Date" ColumnName="Contact_Date" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="RC_Report_ID" ColumnName="RC_Report_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LkpRCReportIssueSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.LkpRCReportIssue">
+              <MappingFragment StoreEntitySet="Lkp_RC_Report_Issue">
+                <ScalarProperty Name="Issue_Name" ColumnName="Issue_Name" />
+                <ScalarProperty Name="Issue_ID" ColumnName="Issue_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LkpRCReportProductsDiscussedSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.LkpRCReportProductsDiscussed">
+              <MappingFragment StoreEntitySet="Lkp_RC_Report_Products_Discussed">
+                <ScalarProperty Name="Modified_DT" ColumnName="Modified_DT" />
+                <ScalarProperty Name="Modified_BY" ColumnName="Modified_BY" />
+                <ScalarProperty Name="Created_DT" ColumnName="Created_DT" />
+                <ScalarProperty Name="Created_BY" ColumnName="Created_BY" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Sort_Index" ColumnName="Sort_Index" />
+                <ScalarProperty Name="Drug_Name" ColumnName="Drug_Name" />
+                <ScalarProperty Name="Drug_ID" ColumnName="Drug_ID" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="Products_Discussed_ID" ColumnName="Products_Discussed_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RCReportIssueSummaryViewSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.RCReportIssueSummaryView">
+              <MappingFragment StoreEntitySet="V_RC_Report_Issue_Summary">
+                <ScalarProperty Name="Drug_Name" ColumnName="Drug_Name" />
+                <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+                <ScalarProperty Name="Products_Discussed_ID" ColumnName="Products_Discussed_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="Section_ID" ColumnName="Section_ID" />
+                <ScalarProperty Name="Plan_Name" ColumnName="Plan_Name" />
+                <ScalarProperty Name="NAM_ID" ColumnName="NAM_ID" />
+                <ScalarProperty Name="Contact_Date" ColumnName="Contact_Date" />
+                <ScalarProperty Name="Issue_Name" ColumnName="Issue_Name" />
+                <ScalarProperty Name="Issue_ID" ColumnName="Issue_ID" />
+                <ScalarProperty Name="RC_Report_ID" ColumnName="RC_Report_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RCReportIssueDetailsViewSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.RCReportIssueDetailsView">
+              <MappingFragment StoreEntitySet="V_RC_Report_Issue_Details">
+                <ScalarProperty Name="Contact_Name" ColumnName="Contact_Name" />
+                <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+                <ScalarProperty Name="Drug_Name" ColumnName="Drug_Name" />
+                <ScalarProperty Name="Products_Discussed_ID" ColumnName="Products_Discussed_ID" />
+                <ScalarProperty Name="Status_Name" ColumnName="Status_Name" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+                <ScalarProperty Name="Plan_Name" ColumnName="Plan_Name" />
+                <ScalarProperty Name="Account_Manager" ColumnName="Account_Manager" />
+                <ScalarProperty Name="NAM_ID" ColumnName="NAM_ID" />
+                <ScalarProperty Name="Followup_Date" ColumnName="Followup_Date" />
+                <ScalarProperty Name="Contact_Date" ColumnName="Contact_Date" />
+                <ScalarProperty Name="Issue_Name" ColumnName="Issue_Name" />
+                <ScalarProperty Name="Issue_ID" ColumnName="Issue_ID" />
+                <ScalarProperty Name="RC_Report_ID" ColumnName="RC_Report_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RCReportDrilldownViewSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.RCReportDrilldownView">
+              <MappingFragment StoreEntitySet="V_RC_Report_Drilldown">
+                <ScalarProperty Name="Team_Comments" ColumnName="Team_Comments" />
+                <ScalarProperty Name="Contact_Name" ColumnName="Contact_Name" />
+                <ScalarProperty Name="ASSIST_Desc" ColumnName="ASSIST_Desc" />
+                <ScalarProperty Name="Geography_Name" ColumnName="Geography_Name" />
+                <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+                <ScalarProperty Name="Products_Discussed_ID" ColumnName="Products_Discussed_ID" />
+                <ScalarProperty Name="Drug_Name" ColumnName="Drug_Name" />
+                <ScalarProperty Name="Status_Name" ColumnName="Status_Name" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="Section_Name" ColumnName="Section_Name" />
+                <ScalarProperty Name="Section_ID" ColumnName="Section_ID" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+                <ScalarProperty Name="Plan_Name" ColumnName="Plan_Name" />
+                <ScalarProperty Name="Account_Manager" ColumnName="Account_Manager" />
+                <ScalarProperty Name="NAM_ID" ColumnName="NAM_ID" />
+                <ScalarProperty Name="Contact_Date" ColumnName="Contact_Date" />
+                <ScalarProperty Name="Other_Issue" ColumnName="Other_Issue" />
+                <ScalarProperty Name="Issue_ID" ColumnName="Issue_ID" />
+                <ScalarProperty Name="Issue_Name" ColumnName="Issue_Name" />
+                <ScalarProperty Name="RC_Report_ID" ColumnName="RC_Report_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PCNBINSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.PCNBIN">
+              <MappingFragment StoreEntitySet="PCN_BIN_Report">
+                <ScalarProperty Name="PCN_Number" ColumnName="PCN_Number" />
+                <ScalarProperty Name="BIN_Number" ColumnName="BIN_Number" />
+                <ScalarProperty Name="Plan_ID" ColumnName="Plan_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PCNBINReportViewSet">
+            <EntityTypeMapping TypeName="PathfinderUnitedTheraModel.PCNBINReportView">
+              <MappingFragment StoreEntitySet="V_PCN_BIN_Report">
+                <ScalarProperty Name="PCN_Number" ColumnName="PCN_Number" />
+                <ScalarProperty Name="BIN_Number" ColumnName="BIN_Number" />
+                <ScalarProperty Name="Section_Name" ColumnName="Section_Name" />
+                <ScalarProperty Name="Plan_State" ColumnName="Plan_State" />
+                <ScalarProperty Name="Plan_Name" ColumnName="Plan_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="PathfinderUnitedTheraModel" ZoomLevel="27" >
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.Plan_Documents" Width="1.5" PointX="7.25" PointY="11.75" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.PlanDocumentsView" Width="1.5" PointX="5.25" PointY="5" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.ContactReportProductsDiscussedView" Width="1.5" PointX="5.375" PointY="0.625" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.AccountManagersByTerritoryView" Width="1.5" PointX="0.5" PointY="5.25" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.Contact_Reports" Width="1.5" PointX="2.75" PointY="1.125" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.PlanGrid" Width="1.5" PointX="8.4486540315899319" PointY="0.70249229702283267" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.RCReportPlanDocuments" Width="1.5" PointX="1.125" PointY="10.25" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.LkpRCReportStatus" Width="1.5" PointX="30.75" PointY="10" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.RCReportContacts" Width="1.5" PointX="7.3683101122119972" PointY="7.1805300149975952" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.RCReportProductsDiscussed" Width="1.5" PointX="6.7096037169497471" PointY="10.349194933822934" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.RCReportProductsDiscussedView" Width="1.5" PointX="10.156965677699525" PointY="12.380744194789205" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.RCReports" Width="1.5" PointX="11.875" PointY="7.5" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.LkpRCReportIssue" Width="1.5" PointX="11.75" PointY="3" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.LkpRCReportProductsDiscussed" Width="1.5" PointX="0.5" PointY="2" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.RCReportIssueSummaryView" Width="1.5" PointX="4.75" PointY="13.25" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.RCReportIssueDetailsView" Width="1.5" PointX="13.25" PointY="15.125" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.RCReportDrilldownView" Width="1.5" PointX="0.24154650058669341" PointY="6.3718702226746222" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.PCNBIN" Width="1.5" PointX="13.125" PointY="12.875" />
+        <EntityTypeShape EntityType="PathfinderUnitedTheraModel.PCNBINReportView" Width="1.5" PointX="16.25" PointY="13.75" />
+      </Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="admin" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="main" Runat="Server">
+    <asp:ContentPlaceHolder runat="server" ID="main">
+    <script type="text/javascript">
+        $(document).ready(function() { $("body").addClass("admin"); });
+    </script>
+        <telerik:RadSplitter EnableEmbeddedBaseStylesheet="false" SkinID="ImpactradSplitter" VisibleDuringInit="false" ResizeWithBrowserWindow="true" runat="server" ID="radSplit" Width="100%" Height="100%">                
+            <telerik:RadPane runat="server" ID="radPaneNav" Width="15%" Scrolling="None">     
+                
+                <div class="adminBtn" id="a1"><asp:HyperLink runat="server" CssClass="impactLink" ID="linkGoalsAndTargets" Text="Update Goals and Targets" NavigateUrl="admingoalsandtargets.aspx" /></div>
+                
+                <div class="adminBtn" id="a2"><asp:HyperLink runat="server" CssClass="impactLink" ID="linkTimelines" Text="Timelines" NavigateUrl="admintimelines.aspx" /></div>
+                
+                <div class="adminBtn" id="a3"><asp:HyperLink runat="server" CssClass="impactLink" ID="linkCampaignApproval" Text="Campaign Approval" NavigateUrl="admincampaignapproval.aspx" /></div>
+                
+                <div class="adminBtn" id="a4"><asp:HyperLink runat="server" CssClass="impactLink" ID="linkManageTactics" Text="Manage Tactics" NavigateUrl="adminmanagetactics.aspx" /></div>
+                
+                <div class="adminBtn" id="a5"><asp:HyperLink runat="server" CssClass="impactLink" ID="linkManageMessages" Text="Messages" NavigateUrl="adminmanagemessages.aspx" /></div>
+                
+            </telerik:RadPane>
+            <telerik:RadSplitBar ID="RadSplitBar1" runat="server" CollapseMode="Forward" />
+            <telerik:RadPane runat="server" ID="radPaneContent" Width="85%" Scrolling="None">                
+                <asp:ContentPlaceHolder runat="server" ID="content">
+                </asp:ContentPlaceHolder>
+            </telerik:RadPane>
+        </telerik:RadSplitter>        
+    </asp:ContentPlaceHolder>
+    
+    <asp:ContentPlaceHolder runat="server" ID="error">
+        You are not authorized to view this page.
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+
